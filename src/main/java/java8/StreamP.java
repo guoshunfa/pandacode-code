@@ -78,8 +78,7 @@ public class StreamP {
         datas.stream().sorted(Comparator.naturalOrder()).forEach(a -> System.out.println(a));
 
         // peek 主要为了支持调试 console: 1 2 2 3 2 2
-        datas.stream().peek(a -> System.out.println(a)).filter(a -> a == 2)
-                .forEach(a -> System.out.println(a));
+        datas.stream().peek(a -> System.out.println(a)).filter(a -> a == 2).forEach(a -> System.out.println(a));
 
         // limit 只取几位 console: 1 2
         datas.stream().limit(2).forEach(a -> System.out.println(a));
@@ -123,8 +122,7 @@ public class StreamP {
         // --------------------------------------分割线---------------------------------------
 
         // 多级结构 [[1,2],[3,4],[5,6]]
-        List<int[]> datas2
-                = Lists.newArrayList(new int[]{1, 2}, new int[]{3, 4}, new int[]{5, 6});
+        List<int[]> datas2 = Lists.newArrayList(new int[]{1, 2}, new int[]{3, 4}, new int[]{5, 6});
 
         // flatMap/flatMapToInt/flatMapToLong/flatMapToDouble 数据扁平化 console: 1 2 3 4 5 6
         datas2.stream().flatMapToInt(a -> Arrays.stream(a)).forEach(a -> System.out.println(a));
